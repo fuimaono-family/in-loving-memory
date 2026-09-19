@@ -211,6 +211,46 @@
     font-size:.92em;
     color:var(--navy);
   }
+  .video-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    margin:2px auto 0;
+    border-radius:12px;
+    overflow:hidden;
+    background:#0b1020;
+    box-shadow:0 12px 30px rgba(22,36,77,.20);
+  }
+  .video-wrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+  .download-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 24px;
+    border:1px solid var(--gold);
+    border-radius:999px;
+    color:var(--navy);
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:.04em;
+    font-size:1rem;
+    background:rgba(255,255,255,.55);
+    transition:background .18s ease,color .18s ease;
+  }
+  .download-btn:hover,.download-btn:focus-visible{
+    background:var(--gold);
+    color:#fff;
+  }
+  .download-note{
+    margin:.7em 0 0;
+    font-size:.82rem;
+    color:#6b7690;
+  }
 
   @media (prefers-reduced-motion:reduce){
     .scroll-cue .chev{animation:none;}
@@ -274,6 +314,22 @@
           for ever and ever.<br>
           <span class="amen">Amen</span>
         </p>
+      </section>
+
+      <div class="rule"><span class="cross">&#10013;</span></div>
+
+      <section class="tribute">
+        <p class="prayer-title">In Loving Remembrance</p>
+        <div class="video-wrap">
+          <iframe src="https://drive.google.com/file/d/1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY/preview"
+                  title="Memorial slideshow video for Leusumanu Lene Fuimaono"
+                  allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <a class="download-btn"
+           href="https://drive.usercontent.google.com/download?id=1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY&amp;export=download&amp;confirm=t">
+          &#8681;&nbsp; Download the video
+        </a>
+        <p class="download-note">Dads_Slideshow.mp4 &middot; large file (~1.3&nbsp;GB)</p>
       </section>
 
     </div>
