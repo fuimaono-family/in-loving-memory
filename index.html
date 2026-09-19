@@ -211,31 +211,53 @@
     font-size:.92em;
     color:var(--navy);
   }
-  .video-wrap{
+  .tribute-watch{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
     width:100%;
+    min-height:240px;
+    aspect-ratio:16 / 10;
     margin:2px auto 0;
+    padding:24px;
     border-radius:12px;
-    overflow:hidden;
-    background:#0b1020;
-    box-shadow:0 12px 30px rgba(22,36,77,.20);
-    line-height:0;
-  }
-  .video-wrap iframe{
-    display:block;
-    width:100%;
-    height:clamp(360px, 62vh, 520px);
-    border:0;
-  }
-  .watch-link{
-    display:inline-block;
-    margin-top:16px;
-    font-size:.98rem;
-    color:var(--navy);
+    text-align:center;
     text-decoration:none;
-    border-bottom:1px solid var(--gold-soft);
-    padding-bottom:2px;
+    color:#fff;
+    background:
+      linear-gradient(rgba(11,16,32,.5), rgba(11,16,32,.66)),
+      url("https://drive.google.com/thumbnail?id=1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY&sz=w1000") center/cover no-repeat,
+      #0b1020;
+    box-shadow:0 12px 30px rgba(22,36,77,.20);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-  .watch-link:hover,.watch-link:focus-visible{ color:var(--gold); }
+  .tribute-watch:hover,.tribute-watch:focus-visible{
+    transform:translateY(-1px);
+    box-shadow:0 16px 36px rgba(22,36,77,.26);
+  }
+  .tribute-watch .play{
+    width:70px;height:70px;
+    border-radius:50%;
+    background:rgba(255,255,255,.94);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.35);
+  }
+  .tribute-watch .play svg{ width:26px;height:26px;margin-left:4px;fill:var(--navy); }
+  .tribute-watch .wlabel{
+    font-size:1.34rem;
+    font-weight:600;
+    letter-spacing:.01em;
+    text-shadow:0 1px 8px rgba(0,0,0,.45);
+  }
+  .tribute-watch .wsub{
+    font-size:.82rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    opacity:.92;
+    text-shadow:0 1px 8px rgba(0,0,0,.45);
+  }
   .download-btn{
     display:inline-block;
     margin-top:18px;
@@ -328,15 +350,13 @@
 
       <section class="tribute">
         <p class="prayer-title">In Loving Remembrance</p>
-        <div class="video-wrap">
-          <iframe src="https://drive.google.com/file/d/1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY/preview"
-                  title="Memorial slideshow video for Leusumanu Lene Fuimaono"
-                  allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div>
-          <a class="watch-link" href="https://drive.google.com/file/d/1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY/view"
-             target="_blank" rel="noopener">Open full-screen player &#8599;</a>
-        </div>
+        <a class="tribute-watch" href="https://drive.google.com/file/d/1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY/view"
+           target="_blank" rel="noopener"
+           aria-label="Watch the tribute slideshow for Leusumanu Lene Fuimaono (opens the video player)">
+          <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+          <span class="wlabel">Watch the Tribute Slideshow</span>
+          <span class="wsub">Opens the player &middot; about 30 minutes</span>
+        </a>
         <a class="download-btn"
            href="https://drive.usercontent.google.com/download?id=1wb_qKO9QffJOh95dlg7AQetuJ8UhnwpY&amp;export=download&amp;confirm=t">
           &#8681;&nbsp; Download the video
